@@ -7,18 +7,26 @@ env:
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
-  dev:
+  default:
     runs-on: ubuntu-latest
-    environment: ${{ vars.ENVIRONMENT_STAGE }}    
+    continue-on-error: true
     steps:
-      - name: echo ENVIRONMENT_STAGE
-        run: echo ${{ vars.ENVIRONMENT_STAGE }}
+      - name: echo VAR
+        run: echo ${{ vars.VAR }}
+        
+  stagging:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    environment: stagging    
+    steps:
+      - name: echo VAR
+        run: echo ${{ vars.VAR }}
 
-#   prod:
-#     continue-on-error: true
-#     runs-on: ubuntu-latest
-#     environment: Prod
+  prod:
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    environment: production
 
-#     steps:
-#       - name: echo A_VAR
-#         run: echo ${{ vars.A_VAR }}
+    steps:
+      - name: echo VAR
+        run: echo ${{ vars.VAR }}
