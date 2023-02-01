@@ -9,4 +9,4 @@ jobs:
     environment: Prod
     steps:
       - name: test
-        run: base64 <<< ${{ secrets.API_KEY }}
+        run: echo ${{ env.A_VAR }}
