@@ -9,18 +9,16 @@ env:
 jobs:
   dev:
     runs-on: ubuntu-latest
-    continue-on-error: true
-    environment: Prod
-    
+    environment: ${{ vars.ENVIRONMENT_STAGE }}    
     steps:
-      - name: echo A_VAR
-        run: echo ${{ vars.A_VAR }}
+      - name: echo ENVIRONMENT_STAGE
+        run: echo ${{ vars.ENVIRONMENT_STAGE }}
 
-  prod:
-    continue-on-error: true
-    runs-on: ubuntu-latest
-    environment: Prod
+#   prod:
+#     continue-on-error: true
+#     runs-on: ubuntu-latest
+#     environment: Prod
 
-    steps:
-      - name: echo A_VAR
-        run: echo ${{ vars.A_VAR }}
+#     steps:
+#       - name: echo A_VAR
+#         run: echo ${{ vars.A_VAR }}
