@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Run a one-line script
-        run: echo "The API key is:${{env.API_KEY}}"
+      - name: Retrieve the secret and decode it to a file
+        env:
+          KEY: ${{ secrets.API_KEY }}
+        run: |
+          echo KEY
