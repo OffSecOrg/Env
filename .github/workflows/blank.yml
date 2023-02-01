@@ -4,12 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
     environment: Prod
-    
     steps:
-      - name: Retrieve the secret and decode it to a file
-        env:
-          KEY: ${{ secrets.API_KEY }}
-        run: echo $KEY | base64
+      - name: test
+        run: base64 <<< ${{ secrets.API_KEY }}
