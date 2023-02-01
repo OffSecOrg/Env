@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Prod
     
     steps:
       - name: Retrieve the secret and decode it to a file
