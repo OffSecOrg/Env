@@ -3,10 +3,15 @@ name: TestEnv
 on:
   workflow_dispatch:
 
+env:
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+
 jobs:
   deployment:
     runs-on: ubuntu-latest
     environment: Prod
+
+
     steps:
       - name: test
-        run: echo ${{ env.A_VAR }}
+        run: echo ${{ vars.A_VAR }}
