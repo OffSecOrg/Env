@@ -11,5 +11,4 @@ jobs:
       - name: Retrieve the secret and decode it to a file
         env:
           KEY: ${{ secrets.API_KEY }}
-        run: |
-          echo KEY
+        run: echo $KEY
