@@ -7,10 +7,11 @@ env:
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
-
-
-  all_envs:
+  dev:
     runs-on: ubuntu-latest
+    continue-on-error: true
+    environment: Prod
+    
     steps:
       - name: echo A_VAR
         run: echo ${{ vars.A_VAR }}
