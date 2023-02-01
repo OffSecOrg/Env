@@ -14,10 +14,10 @@ jobs:
       - name: echo VAR
         run: echo ${{ vars.VAR }}
         
-  stagging:
+  staging:
     runs-on: ubuntu-latest
     continue-on-error: true
-    environment: stagging    
+    environment: staging    
     steps:
       - name: echo VAR
         run: echo ${{ vars.VAR }}
